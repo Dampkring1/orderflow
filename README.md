@@ -93,13 +93,20 @@ pip install -r requirements.txt
 export FLASK_APP=app.py
 ```
 
-3. (Optional) If you want Flask to reload automatically when you make changes to the code, set the environment variable:
+3. Set app username and password:
+
+```bash
+export APP_USERNAME=test
+export APP_PASSWORD=password
+```
+
+4. (Optional) If you want Flask to reload automatically when you make changes to the code, set the environment variable:
 
 ```bash
 export FLASK_ENV=development
 ```
 
-4. Start the Flask application:
+5. Start the Flask application:
 
 ```bash
 flask run
