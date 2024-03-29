@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Add a link to a CDN for icons if needed -->
+</head>
+<body>
+
+<div class="container-home">
+    <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+
+    <div class="total-container">
+        {% if session.get('total_completed', None) %}
+            <h3>Total Completed: {{ session['total_completed'] }}</h3>
+        {% endif %}
+    </div>
+
+
+    <div class="form-add-order">
+        <form action="{{ url_for('add_order') }}" method="post">
+            <input type="number" name="order_value" placeholder="Order value" required min="1" step="1">
+            <button type="submit">Add Order</button>
+        </form>
+    </div>
+
+    
+    <div id="orders-container">
+        {% for order in orders %}
+        {% if order['status'] != 'Completed' %}
+        <div class="order">
+            <form action="{{ url_for('cancel_order', order_id=order['id']) }}" method="post">
+                <button type="submit" class="cancel-order">Cancel</button>
+            </form>
+            <span class="order-detail">Order {{ order.id }} - {{ order.value }}</span>
+            <form action="{{ url_for('complete_order', order_id=order['id']) }}" method="post">
+                <button type="submit" class="complete-order">Complete</button>
+            </form>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+</body>
+</html>

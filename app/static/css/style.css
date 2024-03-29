@@ -1,0 +1,233 @@
+/* style.css */
+
+body {
+    background-color: #2c3e50; /* Dark blue background */
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-login {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px; /* Adjust the width as needed */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.container-home {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 75%; /* Adjust the width as needed */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column; /* Stack the orders vertically */
+    align-items: stretch; /* Make the children (orders) fill the container */
+}
+
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+    .container-home {
+        width: 90%; /* Increase width to use more of the screen */
+        padding: 15px; /* Adjust padding to save space */
+        margin-top: 20px; /* Add some top margin if needed */
+        margin-bottom: 20px; /* Add some bottom margin if needed */
+        min-height: 65%;
+    }
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px; /* Adjust the spacing between input fields */
+  }
+  
+.input-group input {
+    width: 100%; /* Full width of the parent container */
+    padding: 10px;
+    padding-left: 40px; /* Make sure this is enough space for the icon */
+    margin-bottom: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* This ensures padding is included in the width */
+    /* Other styles... */
+}
+
+
+.input-group i {
+position: absolute;
+top: 0;
+left: 0;
+padding: 10px;
+color: #333;
+background-color: #fff;
+border-right: 1px solid #ccc;
+border-top-left-radius: 4px; /* Match input field border radius */
+border-bottom-left-radius: 4px;
+z-index: 10; /* Ensure the icon is above the input field */
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+#add-order {
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    height: 100px;
+    font-size: 50px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#add-order:hover {
+    background-color: #0056b3;
+}
+
+.order {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cancel-order, .complete-order {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-order {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.complete-order {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.cancel-order:hover {
+    background-color: #c0392b;
+}
+
+.complete-order:hover {
+    background-color: #27ae60;
+}
+
+.order-detail {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.logout-button {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 15px;
+    align-items: center;
+    height: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none; /* Remove underline from links */
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.logout-button:hover {
+    background-color: #c9302c;
+}
+
+.form-add-order {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.form-add-order input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Spacing between the input and the button */
+}
+
+.form-add-order button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-add-order button:hover {
+    background-color: #2980b9;
+}
+
+/* Add this to your style.css */
+.total-container {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px; /* Adjust as needed for spacing */
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+    text-align: center;
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .form-add-order {
+        flex-direction: column; /* Stack input and button vertically on smaller screens */
+    }
+
+    .form-add-order input[type="number"],
+    .form-add-order button {
+        padding: 30px; /* Larger padding for better touch targets */
+        font-size: 1em; /* Larger font size for better readability */
+    }
+
+    .form-add-order button {
+        margin-top: 20px; /* Add some space between the input and the button */
+    }
+}
